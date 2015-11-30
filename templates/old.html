@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+<link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<div class="margin-top-md">&nbsp;</div>
+<div class="row-fluid">
+    <div class="col-sm-3 margin-top-sm">
+        <h5><strong>writing</strong></h5>
+        <p>
+            Sometimes I write stuff - it'll start showing up here
+        </p>   
+    </div>
+    <div class="col-sm-3 margin-top-sm">
+        <h5><strong>drawings</strong></h5>
+        <p>
+            Other times I might draw - same deal
+        </p>   
+    </div>
+    <div class="col-sm-3 margin-top-sm">
+        <h5><strong>pictures</strong></h5>
+        <p>
+            Once I got a camera and I used it a lot, that was a while ago. Now I'm starting to play with it again.
+        </p>   
+    </div>
+    <div class="col-sm-3 margin-top-sm">
+        <h5><strong>videos</strong></h5>
+        <p>
+            Coming soon maybe
+        </p>   
+    </div>
+</div>
+<div class="padding-top-md">&nbsp;</div>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+</script>
+{% endblock %}

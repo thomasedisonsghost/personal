@@ -5,14 +5,17 @@
         <!-- Meta -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/A.ico') }}">
         
-        <title>index</title>
+        <title>{% block title %}{% endblock title %}</title>
         
         <!-- Bootstrap Core CSS -->
-        <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+        <link href="{{url_for('static', filename='css/normalize.css')}}" rel="stylesheet">
         
         <!-- Customizable CSS -->
         <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet">        
@@ -22,6 +25,9 @@
             <script src="static/js/html5shiv.js"></script>
             <script src="static/js/respond.min.js"></script>
         <![endif]-->
+
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Muli:300,400|Raleway:400,300|Londrina+Outline' rel='stylesheet' type='text/css'>
         {% block extra_head %}
         {% endblock %}
     </head>
@@ -29,20 +35,19 @@
     <body>
     {% include 'header.html' %}
 
-    <main>
-        {% block main %}
-        {% endblock %}
-    </main>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
 
-    {% include 'footer.html' %}
-    <script type="text/javascript" src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/jquery.easing.1.3.min.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/scripts.js')}}"></script>
-    {% block  extra_js %}
-    {% endblock %}
-    <script>
-        
-    </script>
+        {% include 'footer.html' %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/jquery.easing.1.3.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/scripts.js')}}"></script>
+        {% block  extra_js %}
+        {% endblock %}
+        <script></script>
+
     </body>
 </html>

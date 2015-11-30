@@ -1,7 +1,7 @@
 """
 A lot of the time we just want to very simply wrap a blueprint in a full app for the sake of convenience.
 """
-from flask import Flask, request, session, abort
+from flask import Flask, request, session, abort, url_for
 
 import random, string
 
@@ -22,7 +22,6 @@ def make_app(blueprint, csrf_protect=True, facebook=False):
     app.register_blueprint(blueprint)
     if csrf_protect:
         app = protect(app)
-
     return app
 
 

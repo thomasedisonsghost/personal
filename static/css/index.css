@@ -5,26 +5,8 @@ white: #eee
 */
 
 body {
-    background-color: #eee;    
-}
-
-header {
-    position: fixed;
-    top: 0px;
-    width:100%;
-    background-color: #eee;
-    z-index:999;
-}
-    header h4 {
-        border-bottom: 1px solid #e6e6e6;
-        background-color: #eee;
-    }
-
-footer {
-    position: fixed;
-    bottom: 0px;
-    width:100%;
-    background-color: #eee;
+    background-color: #6541E1;
+    color: white;
 }
 
 .link {
@@ -34,4 +16,128 @@ footer {
     color:#178ccc;
     text-decoration: underline;
     cursor:pointer;
+}
+
+#always {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#not-yet {
+    position: absolute;
+    left:20px;
+    top: 25px;
+    font-family: courier new;
+}
+    #not-yet > span {
+        font-family: courier new;
+        -webkit-animation: blinking;
+        -o-animation: blinking;
+        animation: blinking;
+        /*animation-name: blinking;*/
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+    }
+
+@-webkit-keyframes blinking {
+    from {opacity: 1;}
+    50% {opacity: 0;}
+    to {opacity: 1;}
+} 
+
+/* Standard syntax */ 
+@keyframes blinking {
+    from {opacity: 1;}
+    50% {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.hold-me {
+    display: inline-block;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin-top:-125px;
+    margin-left:-125px;
+    /*background: #222;*/
+    /*box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.4);*/
+    /*box-shadow:0px 0px 10px 0px rgba(0,0,0,0.4);*/
+    transform: rotate(45deg);
+    
+}
+
+.picture-holder {
+    background: #6541E1;
+    overflow: hidden;
+}
+
+.picture-holder::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    top: 0%;
+    left: -25%;
+    z-index: -1;
+    /*background: url(http://i.imgur.com/Flbp5jO.jpg);
+    background: url(/static/images/look.gif);*/
+    background: url(/static/images/mirrorsFlying.gif);
+    /*box-shadow:0px 0px 10px 0px rgba(0,0,0,0.4);*/
+    background-size: cover;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+};
+
+.options-holder {
+
+}
+
+.option {
+    width: 80px;
+    height: 80px;
+    background: #F8305B;
+    position: absolute;
+    z-index: 99999;
+    display: block;
+    border-radius: 3px;
+    cursor: pointer;
+}
+    .option span {
+        display: inline-block;
+        position: absolute;
+        transform: rotate(-45deg);
+        text-align: center;
+        width: 100px;
+    }
+
+.option.right {
+    top: 80px;
+    left: 240px;
+}
+    .option.right span {
+        left: -10px;
+        top: 28px;
+    }
+
+.option.left {
+    left: 80px;
+    top: 240px;
+}
+    .option.left span {
+        left: -10px;
+        top: 28px;
+    }
+
+#contact {
+    font-family: courier new;
+    position: absolute;
+    top:25px;
+    right:20px;
+    color:white;
 }
